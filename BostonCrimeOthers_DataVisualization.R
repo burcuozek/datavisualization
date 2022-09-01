@@ -91,7 +91,7 @@ crime$OFFENSE_CODE_GROUP <- as.character(crime$OFFENSE_CODE_GROUP)
 crime$DISTRICT <- as.character(crime$DISTRICT)
 class(crime$OFFENSE_CODE_GROUP)
 
-# New data frame is created to get the output of the Problem 2
+# New data frame is created to get the output of from the previous part.
 # Rows are showing the OFFENCE_CODE_GROUP and columns are showing the DISTRICT
 crime_2 <-crime %>%
   drop_na()%>%
@@ -102,14 +102,13 @@ crime_2 <-crime %>%
 # If there is NA in the data, they are set to 0.
 crime_2[is.na(crime_2)] <- 0 
 
-# Problem 2 asked from us a matrix, therefore required transformation is done
+# Required transformation is done to create a matrix.
 # "Crime_2" matrix is giving the output
 crime_2 <- as.matrix(crime_2)
 crime_2
 
 
 
-# Problem 3-----------------------------------
 ########### errors
 ##### you should have removed the dublicate with using disctict however remove x first 
 ##### you should have done multiple filtering 20 yr, twenty, you should also do that all capital and remove . or _ 
