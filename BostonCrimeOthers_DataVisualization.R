@@ -54,7 +54,7 @@ colnames(missing_student) <- c("student", "count", "total_attendance")
 # Missing student and rest of the student are combined in a new data frame
 attendance_4 <- bind_rows(attendance_3, missing_student)
 
-# To get the same output with the Problem 1, some arrangements are done
+# To get the same output with the previous part, some arrangements are done
 attendance_4 <- attendance_4[,c(1,3)]
 attendance_4$student <- as.character(attendance_4$student)
 temp <- strsplit(attendance_4$student, ",")
