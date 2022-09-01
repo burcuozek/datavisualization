@@ -61,8 +61,6 @@ ggplot(data=delays_carrier_year, aes(x=reorder(carrier,-tot_delay_min), y=tot_de
   geom_bar(stat="identity")
 
 
-# Problem 3-----------------------------------
-
 # New data frame is created by using only the delay type and carrier which will be used for melt function
 delay_type<-select(delays, carrier, carrier_delay, late_aircraft_delay, nas_delay, security_delay, weather_delay)
 # New data frame is converted to the log of the delays in minutes
@@ -86,7 +84,6 @@ class(delay_type_temp$log_delay_in_mins)
 ggplot(delay_type_temp, aes(x = log_delay_in_mins, fill = `delay_type` ))+geom_density(alpha = .5)
 
 
-# Problem 4-----------------------------------
 
 # New data frame is created using the carrier type and delay type
 delay_type_heat<-select(delays, carrier, carrier_delay, late_aircraft_delay, nas_delay, security_delay, weather_delay)
@@ -108,8 +105,6 @@ delay_type_heat_summary
 ggplot(delay_type_heat_summary, aes(x = delay_type, y = carrier, fill= sum_delay)) + 
   geom_tile()
 
-
-# Problem 5-----------------------------------
 
 # New data stream created using year and delay type variables
 delay_line <-select(delays, year, carrier_delay, late_aircraft_delay, nas_delay, security_delay, weather_delay)
